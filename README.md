@@ -186,6 +186,43 @@ android {
 
 ---
 
+## 📦 Generating an APK File
+
+After you have customized the app, you will need to generate an APK file to install it on a device or to publish it on the Google Play Store. There are two types of APKs you can generate.
+
+### Method 1: Generating a Debug APK (For Testing) 🧪
+
+This is the quickest way to create an APK for testing purposes or for sharing with friends. This APK is signed with a temporary debug key and **cannot** be published on the Google Play Store.
+
+1.  In the Android Studio top menu, go to **Build**.
+2.  Select **Build Bundle(s) / APK(s)**.
+3.  Click on **Build APK(s)**.
+4.  Android Studio will start building the project. Once it's finished, a notification will appear in the bottom-right corner.
+5.  Click the **locate** link in the notification to find your APK file. It is usually located at `app/build/outputs/apk/debug/app-debug.apk`.
+
+### Method 2: Generating a Signed/Release APK (For Google Play) 🚀
+
+This is the official version of your app that you will upload to the Google Play Store. It must be digitally signed with your own private key.
+
+1.  In the Android Studio top menu, go to **Build**.
+2.  Select **Generate Signed Bundle / APK...**.
+3.  In the new window, select **APK** and click **Next**.
+4.  You will now see the **Keystore** screen. This is the most important step.
+    -   **If you don't have a keystore:** Click on **Create new...**.
+        -   **Key store path:** Choose a location on your computer to save your keystore file (e.g., a file named `my-app-key.jks`).
+        -   **⚠️ IMPORTANT:** Back up this file securely! If you lose this key, you will **never** be able to update your app on the Google Play Store again.
+        -   Fill in the passwords for your keystore and your key alias. Keep these passwords safe.
+        -   Fill in the certificate information.
+        -   Click **OK**.
+    -   **If you already have a keystore:** Choose **Choose existing...** and select your keystore file.
+5.  Enter your keystore and key alias passwords and click **Next**.
+6.  Select the **Build Variant** as **release**.
+7.  Click **Finish**.
+
+Once the build is complete, a notification will appear. Click the **locate** link to find your signed APK file, usually located at `app/release/app-release.apk`. This is the file you will upload to Google Play.
+
+---
+
 ## 🤝 Supporting the Developer
 
 If you like this project and find it useful, please consider showing your support. A small gesture, like buying a coffee, goes a long way in motivating further development and open-source contributions!
