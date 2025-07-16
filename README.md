@@ -140,6 +140,52 @@ private const val SOUND_SHOULD_LOOP = true
 
 ---
 
+## ⚙️ Finalizing Your App for Release
+
+Before publishing your app, you need to configure some essential details like the app icon, package name, and versioning.
+
+### 1. App Icon 🖼️
+
+The app icon is the image that users will see on their home screen. The easiest and recommended way to set this is by using Android Studio's built-in "Asset Studio".
+
+1.  In the Android Studio project panel (on the left), right-click on the `app` folder.
+2.  Navigate to **New** > **Image Asset**.
+3.  The **Asset Studio** window will open.
+    - In the **Source Asset** section, under **Path**, choose the path to your own source image file (preferably a 1024x1024 pixel PNG).
+    - You can use the options in the **Options** section to resize and adjust the background color.
+4.  Click **Next**, and then **Finish**.
+
+Android Studio will automatically generate icons in all the required sizes and place them in the correct `res/mipmap` folders.
+
+### 2. Package Name 📦
+
+The package name (or Application ID) is your app's **unique identifier** on the Google Play Store and on Android devices. **This cannot be changed after you publish your app.**
+
+You can set this ID in your app-level `build.gradle.kts` file.
+
+1.  Open the `app/build.gradle.kts` file.
+2.  Inside the `defaultConfig` block, modify the `applicationId` property. The standard convention is to use a reverse domain name format.
+
+```kotlin
+// In app/build.gradle.kts
+android {
+    // ...
+    defaultConfig {
+        // ⚠️ IMPORTANT: Change this to your unique ID before publishing!
+        // It should be unique on the Google Play Store.
+        applicationId = "com.yourcompany.lookatme"
+        
+        minSdk = 24
+        targetSdk = 34
+        versionCode = 1
+        versionName = "1.0"
+    }
+    // ...
+}
+```
+
+---
+
 ## 🤝 Supporting the Developer
 
 If you like this project and find it useful, please consider showing your support. A small gesture, like buying a coffee, goes a long way in motivating further development and open-source contributions!
