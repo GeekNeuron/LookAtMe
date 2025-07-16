@@ -1,1 +1,151 @@
 # LookAtMe
+
+A simple and fun Android application that acts as a transparent overlay on your home screen, revealing custom content after a unique interaction.
+
+![LookAtMe Screenshot/GIF](https://via.placeholder.com/800x450.png?text=Add+Your+Screenshot+or+GIF+Here)
+*(Replace the URL above with a link to your own screenshot or GIF)*
+
+---
+
+## ✨ Features
+
+- **Transparent Overlay:** Runs as a transparent layer on top of the device's launcher.
+- **Long-Press Unlock:** Unlocks by holding down on the screen for a configurable duration.
+- **Dynamic Content:** Display a title, a central image, a footer, and a vertically scrolling text.
+- **Image Support:** Natively supports both static (PNG) and animated (GIF) images.
+- **Customizable Audio:** Play a background sound with configurable delay and looping.
+- **Custom Font:** Apply a single custom font to all text elements.
+- **Developer-Centric:** Fully configurable via simple boolean flags and constants directly in the code.
+
+---
+
+## 📂 Project Structure
+
+Here is the location of the key files you'll need to modify:
+
+```
+LookAtMe/
+└── app/
+    ├── build.gradle.kts
+    └── src/
+        └── main/
+            ├── java/com/example/lookatme/
+            │   └── MainActivity.kt       <- Main configuration file
+            ├── res/
+            │   ├── drawable/
+            │   │   ├── animated_image.gif  <- Your animated image
+            │   │   └── your_png_image.png  <- Your static image
+            │   ├── font/
+            │   │   └── my_custom_font.ttf  <- Your custom font
+            │   ├── layout/
+            │   │   └── activity_main.xml   <- Text content file
+            │   ├── raw/
+            │   │   └── background_sound.mp3<- Your background sound
+            │   └── values/
+            │       └── themes.xml
+            └── AndroidManifest.xml
+```
+
+---
+
+## 🚀 Getting Started
+
+1.  Clone this repository to your local machine.
+2.  Open the project in Android Studio.
+3.  Android Studio will prompt you to sync the project. Click **Sync Now**. This will automatically download the required `Glide` library as defined in `app/build.gradle.kts`.
+4.  Customize the app using the guide below.
+5.  Build and run the app on an emulator or a physical device.
+
+---
+
+## ⚙️ How to Customize (Developer's Guide)
+
+All customizations are done by either replacing files or changing values in `MainActivity.kt` and `activity_main.xml`.
+
+### 1. Replacing Content Files
+
+To change the visual and audio assets, simply replace the following files with your own, keeping the filenames the same.
+
+| Content Type        | File Location                | Instructions                                 |
+| ------------------- | ---------------------------- | -------------------------------------------- |
+| **Custom Font** | `app/src/main/res/font/`     | Replace `my_custom_font.ttf` with your font file.   |
+| **Background Sound**| `app/src/main/res/raw/`      | Replace `background_sound.mp3` with your audio file.|
+| **Animated Image** | `app/src/main/res/drawable/` | Replace `animated_image.gif` with your GIF.        |
+| **Static Image** | `app/src/main/res/drawable/` | Replace `your_png_image.png` with your PNG.      |
+
+### 2. Changing Displayed Text
+
+To change the text that appears on the screen, open the `app/src/main/res/layout/activity_main.xml` file and edit the `android:text` attribute for the desired element.
+
+```xml
+<TextView
+    android:id="@+id/title_text"
+    ...
+    android:text="Your New Title Here" />
+
+<TextView
+    android:id="@+id/footer_text"
+    ...
+    android:text="Your new footer text." />
+
+<TextView
+    android:id="@+id/scrolling_text"
+    ...
+    android:text="Your new long scrolling message..." />
+```
+
+### 3. Configuring Features in `MainActivity.kt`
+
+Open `app/src/main/java/com/example/lookatme/MainActivity.kt`. At the top of the file, inside the `companion object`, you will find all the settings to control the app's behavior.
+
+#### Feature Toggles
+Set these to `true` to enable a feature or `false` to disable it completely.
+
+```kotlin
+private const val IS_TITLE_ENABLED = true
+private const val IS_IMAGE_ENABLED = true
+private const val IS_FOOTER_ENABLED = true
+private const val IS_SCROLLING_TEXT_ENABLED = true
+private const val IS_SOUND_ENABLED = true
+private const val IS_VIBRATION_ENABLED = true
+```
+
+#### Image Type
+Choose whether to display the animated GIF or the static PNG.
+
+```kotlin
+// true: displays animated_image.gif
+// false: displays your_png_image.png
+private const val USE_ANIMATED_IMAGE = true
+```
+
+#### Unlock Mechanism
+Change the number of seconds the user must press and hold to unlock.
+
+```kotlin
+private const val UNLOCK_DELAY_SECONDS = 9
+```
+
+#### Background Sound
+Control the sound's delay and looping behavior.
+
+```kotlin
+// Delay in seconds before the sound starts playing
+private const val SOUND_DELAY_SECONDS = 2
+
+// true: the sound will loop forever
+// false: the sound will play only once
+private const val SOUND_SHOULD_LOOP = true
+```
+
+---
+
+## 🤝 Supporting the Developer
+
+If you like this project and find it useful, please consider showing your support. A small gesture, like buying a coffee, goes a long way in motivating further development and open-source contributions!
+
+[☕ Buy Me a Coffee](https://www.buymeacoffee.com/your_username) *(Replace with your actual link)*
+
+---
+
+Created with ❤️ by GeekNeuron
