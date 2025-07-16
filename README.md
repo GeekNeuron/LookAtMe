@@ -25,25 +25,70 @@ Here is the location of the key files you'll need to modify:
 
 ```
 LookAtMe/
-└── app/
-    ├── build.gradle.kts
-    └── src/
-        └── main/
-            ├── java/com/example/lookatme/
-            │   └── MainActivity.kt       <- Main configuration file
-            ├── res/
-            │   ├── drawable/
-            │   │   ├── animated_image.gif  <- Your animated image
-            │   │   └── your_png_image.png  <- Your static image
-            │   ├── font/
-            │   │   └── my_custom_font.ttf  <- Your custom font
-            │   ├── layout/
-            │   │   └── activity_main.xml   <- Text content file
-            │   ├── raw/
-            │   │   └── background_sound.mp3<- Your background sound
-            │   └── values/
-            │       └── themes.xml
-            └── AndroidManifest.xml
+├── .gitignore                      <- Specifies files to be ignored by Git
+├── build.gradle.kts                <- Top-level build script for the entire project
+├── gradle.properties               <- Global Gradle settings (e.g., memory configuration)
+├── gradlew                         <- Gradle Wrapper executable script for Linux/macOS
+├── gradlew.bat                     <- Gradle Wrapper executable script for Windows
+├── settings.gradle.kts             <- Declares which modules (like :app) are included in the project
+│
+├── app/                            <- The main application module (all your code and resources are here)
+│   ├── .gitignore
+│   ├── build.gradle.kts            <- Build script for the 'app' module (dependencies, version, package name)
+│   ├── proguard-rules.pro        <- Rules for code shrinking and obfuscation in the release build
+│   └── src/
+│       └── main/
+│           ├── java/
+│           │   └── com/
+│           │       └── example/
+│           │           └── lookatme/
+│           │               └── MainActivity.kt       <- The main Kotlin code file with all the app's logic
+│           │
+│           ├── res/                      <- Resources directory
+│           │   ├── drawable/
+│           │   │   ├── animated_image.gif            <- Your animated GIF file
+│           │   │   └── your_png_image.png            <- Your static PNG image file
+│           │   │
+│           │   ├── font/
+│           │   │   └── my_custom_font.ttf            <- Your custom font file
+│           │   │
+│           │   ├── layout/
+│           │   │   └── activity_main.xml           <- The UI layout definition and display texts
+│           │   │
+│           │   ├── mipmap-hdpi/                    <- App launcher icons for different screen densities
+│           │   │   ├── ic_launcher.webp
+│           │   │   └── ic_launcher_round.webp
+│           │   │
+│           │   ├── mipmap-mdpi/
+│           │   │   ├── ic_launcher.webp
+│           │   │   └── ic_launcher_round.webp
+│           │   │
+│           │   ├── mipmap-xhdpi/
+│           │   │   ├── ic_launcher.webp
+│           │   │   └── ic_launcher_round.webp
+│           │   │
+│           │   ├── mipmap-xxhdpi/
+│           │   │   ├── ic_launcher.webp
+│           │   │   └── ic_launcher_round.webp
+│           │   │
+│           │   ├── mipmap-xxxhdpi/
+│           │   │   ├── ic_launcher.webp
+│           │   │   └── ic_launcher_round.webp
+│           │   │
+│           │   ├── raw/
+│           │   │   └── background_sound.mp3          <- Your background audio file
+│           │   │
+│           │   └── values/                         <- Directory for static values
+│           │       ├── colors.xml                    <- App's color palette
+│           │       ├── strings.xml                   <- Static text strings, like the app name
+│           │       └── themes.xml                    <- The app's visual themes (includes the transparent theme)
+│           │
+│           └── AndroidManifest.xml                 <- The main app manifest (permissions, icon reference, activity theme)
+│
+└── gradle/                           <- Directory containing the Gradle Wrapper files
+    └── wrapper/
+        ├── gradle-wrapper.jar        <- The main Gradle executable JAR
+        └── gradle-wrapper.properties <- Wrapper settings (e.g., specifies the Gradle version)
 ```
 
 ---
