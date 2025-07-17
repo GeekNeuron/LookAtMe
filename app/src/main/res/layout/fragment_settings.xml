@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@drawable/dialog_rounded_background"
+    android:layout_margin="32dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Settings"
+        android:textColor="#c9d1d9"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"/>
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/check_text_settings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enable Text &amp; Font"
+        android:textColor="#c9d1d9"/>
+    
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/check_image_settings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enable Image"
+        android:textColor="#c9d1d9"/>
+        
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/check_sound_settings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enable Sound"
+        android:textColor="#c9d1d9"/>
+        
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/check_vibration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enable Vibration"
+        android:textColor="#c9d1d9"/>
+        
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/check_crack_effect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enable Cracked Screen Effect"
+        android:textColor="#c9d1d9"/>
+
+    <Button
+        android:id="@+id/btn_icon_settings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Change App Appearance"
+        android:layout_marginTop="16dp"/>
+    
+    <TextView
+        android:id="@+id/footer_version_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LookAtMe v1.0"
+        android:textColor="#c9d1d9"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="32dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Created by GeekNeuron"
+        android:textColor="#888"
+        android:textSize="12sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="4dp"/>
+
+</LinearLayout>
