@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.LookAtMe"
+        tools:targetApi="31">
+
+        <activity android:name=".FontSettingsActivity" android:theme="@style/Theme.LookAtMe.SettingsScreen"/>
+        <activity android:name=".ImageSettingsActivity" android:theme="@style/Theme.LookAtMe.SettingsScreen"/>
+        <activity android:name=".SoundSettingsActivity" android:theme="@style/Theme.LookAtMe.SettingsScreen"/>
+        <activity android:name=".IconSettingsActivity" android:theme="@style/Theme.LookAtMe.SettingsScreen"/>
+        <activity android:name=".CrackScreenActivity" android:theme="@style/Theme.AppCompat.NoActionBar"/>
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:enabled="false"
+            android:theme="@style/Theme.LookAtMe.Transparent">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity-alias
+            android:name=".DefaultAlias"
+            android:enabled="true"
+            android:exported="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name=".RedAlias"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@mipmap/ic_launcher_red"
+            android:label="@string/app_name_red"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+    </application>
+</manifest>
