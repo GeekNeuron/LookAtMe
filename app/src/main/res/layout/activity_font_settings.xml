@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/edit_text_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your title text" />
+
+    <Button
+        android:id="@+id/btn_select_font"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Custom Font" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Font Size"
+        android:layout_marginTop="16dp"/>
+    <SeekBar
+        android:id="@+id/seek_bar_font_size"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="34"/>
+
+    <Button
+        android:id="@+id/btn_save_font_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="24dp"
+        android:text="Save" />
+
+</LinearLayout>
