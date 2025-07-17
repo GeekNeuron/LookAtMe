@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select App Appearance"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/btn_set_default_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set Default Icon"/>
+
+    <Button
+        android:id="@+id/btn_set_red_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set Red Icon"/>
+
+</LinearLayout>
