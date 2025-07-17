@@ -25,70 +25,48 @@ Here is the location of the key files you'll need to modify:
 
 ```
 LookAtMe/
-├── .gitignore                      <- Specifies files to be ignored by Git
-├── build.gradle.kts                <- Top-level build script for the entire project
-├── gradle.properties               <- Global Gradle settings (e.g., memory configuration)
-├── gradlew                         <- Gradle Wrapper executable script for Linux/macOS
-├── gradlew.bat                     <- Gradle Wrapper executable script for Windows
-├── settings.gradle.kts             <- Declares which modules (like :app) are included in the project
-│
-├── app/                            <- The main application module (all your code and resources are here)
-│   ├── .gitignore
-│   ├── build.gradle.kts            <- Build script for the 'app' module (dependencies, version, package name)
-│   ├── proguard-rules.pro        <- Rules for code shrinking and obfuscation in the release build
-│   └── src/
-│       └── main/
-│           ├── java/
-│           │   └── com/
-│           │       └── example/
-│           │           └── lookatme/
-│           │               └── MainActivity.kt       <- The main Kotlin code file with all the app's logic
-│           │
-│           ├── res/                      <- Resources directory
-│           │   ├── drawable/
-│           │   │   ├── animated_image.gif            <- Your animated GIF file
-│           │   │   └── your_png_image.png            <- Your static PNG image file
-│           │   │
-│           │   ├── font/
-│           │   │   └── my_custom_font.ttf            <- Your custom font file
-│           │   │
-│           │   ├── layout/
-│           │   │   └── activity_main.xml           <- The UI layout definition and display texts
-│           │   │
-│           │   ├── mipmap-hdpi/                    <- App launcher icons for different screen densities
-│           │   │   ├── ic_launcher.webp
-│           │   │   └── ic_launcher_round.webp
-│           │   │
-│           │   ├── mipmap-mdpi/
-│           │   │   ├── ic_launcher.webp
-│           │   │   └── ic_launcher_round.webp
-│           │   │
-│           │   ├── mipmap-xhdpi/
-│           │   │   ├── ic_launcher.webp
-│           │   │   └── ic_launcher_round.webp
-│           │   │
-│           │   ├── mipmap-xxhdpi/
-│           │   │   ├── ic_launcher.webp
-│           │   │   └── ic_launcher_round.webp
-│           │   │
-│           │   ├── mipmap-xxxhdpi/
-│           │   │   ├── ic_launcher.webp
-│           │   │   └── ic_launcher_round.webp
-│           │   │
-│           │   ├── raw/
-│           │   │   └── background_sound.mp3          <- Your background audio file
-│           │   │
-│           │   └── values/                         <- Directory for static values
-│           │       ├── colors.xml                    <- App's color palette
-│           │       ├── strings.xml                   <- Static text strings, like the app name
-│           │       └── themes.xml                    <- The app's visual themes (includes the transparent theme)
-│           │
-│           └── AndroidManifest.xml                 <- The main app manifest (permissions, icon reference, activity theme)
-│
-└── gradle/                           <- Directory containing the Gradle Wrapper files
-    └── wrapper/
-        ├── gradle-wrapper.jar        <- The main Gradle executable JAR
-        └── gradle-wrapper.properties <- Wrapper settings (e.g., specifies the Gradle version)
+└── app/
+    ├── build.gradle.kts
+    └── src/
+        └── main/
+            ├── java/com/yourcompany/lookatme/  <- Replace with your package name
+            │   ├── CrackScreenActivity.kt
+            │   ├── FontSettingsActivity.kt
+            │   ├── IconSettingsActivity.kt
+            │   ├── ImageSettingsActivity.kt
+            │   ├── MainActivity.kt
+            │   ├── SecurityCheck.kt
+            │   ├── SettingsDialogFragment.kt
+            │   └── SoundSettingsActivity.kt
+            ├── res/
+            │   ├── drawable/
+            │   │   ├── animated_image.gif
+            │   │   ├── crack_1.png
+            │   │   ├── crack_2.png
+            │   │   ├── dialog_rounded_background.xml
+            │   │   └── your_png_image.png
+            │   ├── font/
+            │   │   └── my_custom_font.ttf
+            │   ├── layout/
+            │   │   ├── activity_crack_screen.xml
+            │   │   ├── activity_font_settings.xml    (placeholder)
+            │   │   ├── activity_icon_settings.xml    (placeholder)
+            │   │   ├── activity_image_settings.xml   (placeholder)
+            │   │   ├── activity_main.xml
+            │   │   ├── activity_sound_settings.xml   (placeholder)
+            │   │   └── fragment_settings.xml
+            │   ├── mipmap-hdpi/, mipmap-mdpi/, etc.
+            │   │   ├── ic_launcher.webp
+            │   │   ├── ic_launcher_round.webp
+            │   │   ├── ic_launcher_red.webp          (Example alternate icon)
+            │   │   └── ic_launcher_red_round.webp    (Example alternate icon)
+            │   ├── raw/
+            │   │   └── background_sound.mp3
+            │   └── values/
+            │       ├── colors.xml
+            │       ├── strings.xml
+            │       └── themes.xml
+            └── AndroidManifest.xml
 ```
 
 ---
