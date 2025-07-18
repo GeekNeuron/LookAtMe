@@ -5,36 +5,13 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <EditText
-        android:id="@+id/edit_text_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter your title text" />
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Text Size" android:layout_marginTop="16dp"/>
+    <SeekBar android:id="@+id/seek_bar_font_size" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="100" android:progress="34"/>
 
-    <Button
-        android:id="@+id/btn_select_font"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Select Custom Font" />
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Text Scale" android:layout_marginTop="16dp"/>
+    <SeekBar android:id="@+id/seek_bar_scale" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="100" android:progress="50"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Font Size"
-        android:layout_marginTop="16dp"/>
-    <SeekBar
-        android:id="@+id/seek_bar_font_size"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:max="100"
-        android:progress="34"/>
-
-    <Button
-        android:id="@+id/btn_save_font_settings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="24dp"
-        android:text="Save" />
-
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Text Rotation" android:layout_marginTop="16dp"/>
+    <SeekBar android:id="@+id/seek_bar_rotation" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="360" android:progress="0"/>
+    <Button android:id="@+id/btn_save_font_settings" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal" android:layout_marginTop="24dp" android:text="Save" />
 </LinearLayout>
