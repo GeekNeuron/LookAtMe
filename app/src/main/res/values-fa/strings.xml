@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">به من نگاه کن</string>
+    <string name="app_name_red">به من نگاه کن (قرمز)</string>
+    <string name="settings_title">تنظیمات</string>
+    <string name="enable_text_and_font">فعال‌سازی متن و فونت</string>
+    </resources>
