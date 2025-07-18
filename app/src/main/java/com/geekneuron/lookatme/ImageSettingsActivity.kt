@@ -1,4 +1,4 @@
-package com.yourcompany.lookatme
+package com.geekneuron.lookatme
 
 import android.content.Context
 import android.content.Intent
@@ -8,7 +8,7 @@ import android.widget.SeekBar
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import com.bumptech.glide.Glide
-import com.yourcompany.lookatme.databinding.ActivityImageSettingsBinding
+import com.geekneuron.lookatme.databinding.ActivityImageSettingsBinding
 
 class ImageSettingsActivity : BaseSettingsActivity() {
 
