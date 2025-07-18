@@ -16,15 +16,24 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    // section for defining product flavors
+    // This ensures the BuildConfig file is generated
+    buildFeatures {
+        buildConfig = true
+        viewBinding = true
+    }
+
     flavorDimensions += "version"
     productFlavors {
         create("persian") {
             dimension = "version"
-            applicationIdSuffix = ".fa" // Optional suffix for the package name
+            applicationIdSuffix = ".fa"
+            // This adds a variable to the code to identify the Persian build
+            buildConfigField("String", "FORCED_LOCALE", "\"fa\"")
         }
         create("english") {
             dimension = "version"
+            // This adds a variable to the code to identify the English build
+            buildConfigField("String", "FORCED_LOCALE", "\"en\"")
         }
     }
 
@@ -43,9 +52,6 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
-    }
-    buildFeatures {
-        viewBinding = true
     }
 }
 
