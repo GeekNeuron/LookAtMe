@@ -1,4 +1,4 @@
-package com.yourcompany.lookatme
+package com.geekneuron.lookatme
 
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
