@@ -2,9 +2,6 @@
 
 A unique and highly customizable Android application that acts as a transparent overlay on the home screen. It transforms your launcher into a personal, artistic, or fun experience, revealed through a unique long-press interaction. The app is built to be a creative canvas, controlled entirely by the end-user through a hidden, comprehensive settings panel.
 
-![LookAtMe Screenshot/GIF](https://via.placeholder.com/800x450.png?text=Add+Your+Screenshot+or+GIF+Here)
-*(Replace the URL above with a link to your own screenshot or GIF)*
-
 ---
 
 ## ✨ Features
