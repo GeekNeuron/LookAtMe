@@ -4,17 +4,28 @@ plugins {
 }
 
 android {
-    namespace = "com.yourcompany.lookatme" // ⚠️ Replace with your package name
+    namespace = "com.yourcompany.lookatme"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.yourcompany.lookatme" // ⚠️ Replace with your package name
+        applicationId = "com.yourcompany.lookatme"
         minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    // ✅ بخش جدید برای تعریف طعم‌ها
+    flavorDimensions += "version"
+    productFlavors {
+        create("persian") {
+            dimension = "version"
+            applicationIdSuffix = ".fa" // پسوند پکیج‌نیم برای نسخه فارسی
+        }
+        create("english") {
+            dimension = "version"
+        }
     }
 
     buildTypes {
