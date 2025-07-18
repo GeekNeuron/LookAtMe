@@ -46,8 +46,7 @@ All customization is done through the hidden settings panel.
 
 If you enjoy this project, please consider showing your support. It helps motivate further development and open-source contributions!
 
-[☕ Buy Me a Coffee](https://www.buymeacofee.com/your_username) *(Replace with your link)*
-
+[☕ Buy Me a Coffee](https://www.buymeacofee.com/geekneuron)
 ---
 
 Created with ❤️ by GeekNeuron
