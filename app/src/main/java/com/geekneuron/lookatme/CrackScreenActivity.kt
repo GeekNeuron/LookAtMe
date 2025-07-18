@@ -1,9 +1,9 @@
-package com.yourcompany.lookatme
+package com.geekneuron.lookatme
 
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.yourcompany.lookatme.databinding.ActivityCrackScreenBinding
+import com.geekneuron.lookatme.databinding.ActivityCrackScreenBinding
 
 class CrackScreenActivity : AppCompatActivity() {
 
