@@ -1,6 +1,6 @@
 # LookAtMe
 
-A simple and fun Android application that acts as a transparent overlay on your home screen, revealing custom content after a unique interaction.
+A unique and highly customizable Android application that acts as a transparent overlay on the home screen. It transforms your launcher into a personal, artistic, or fun experience, revealed through a unique long-press interaction. The app is built to be a creative canvas, controlled entirely by the end-user through a hidden, comprehensive settings panel.
 
 ![LookAtMe Screenshot/GIF](https://via.placeholder.com/800x450.png?text=Add+Your+Screenshot+or+GIF+Here)
 *(Replace the URL above with a link to your own screenshot or GIF)*
@@ -9,65 +9,19 @@ A simple and fun Android application that acts as a transparent overlay on your 
 
 ## ✨ Features
 
-- **Transparent Overlay:** Runs as a transparent layer on top of the device's launcher.
-- **Long-Press Unlock:** Unlocks by holding down on the screen for a configurable duration.
-- **Dynamic Content:** Display a title, a central image, a footer, and a vertically scrolling text.
-- **Image Support:** Natively supports both static (PNG) and animated (GIF) images.
-- **Customizable Audio:** Play a background sound with configurable delay and looping.
-- **Custom Font:** Apply a single custom font to all text elements.
-- **Developer-Centric:** Fully configurable via simple boolean flags and constants directly in the code.
-
----
-
-## 📂 Project Structure
-
-Here is the location of the key files you'll need to modify:
-
-```
-LookAtMe/
-└── app/
-    ├── build.gradle.kts
-    └── src/
-        └── main/
-            ├── java/com/yourcompany/lookatme/  <- Replace with your package name
-            │   ├── CrackScreenActivity.kt
-            │   ├── FontSettingsActivity.kt
-            │   ├── IconSettingsActivity.kt
-            │   ├── ImageSettingsActivity.kt
-            │   ├── MainActivity.kt
-            │   ├── SecurityCheck.kt
-            │   ├── SettingsDialogFragment.kt
-            │   └── SoundSettingsActivity.kt
-            ├── res/
-            │   ├── drawable/
-            │   │   ├── animated_image.gif
-            │   │   ├── crack_1.png
-            │   │   ├── crack_2.png
-            │   │   ├── dialog_rounded_background.xml
-            │   │   └── your_png_image.png
-            │   ├── font/
-            │   │   └── my_custom_font.ttf
-            │   ├── layout/
-            │   │   ├── activity_crack_screen.xml
-            │   │   ├── activity_font_settings.xml    (placeholder)
-            │   │   ├── activity_icon_settings.xml    (placeholder)
-            │   │   ├── activity_image_settings.xml   (placeholder)
-            │   │   ├── activity_main.xml
-            │   │   ├── activity_sound_settings.xml   (placeholder)
-            │   │   └── fragment_settings.xml
-            │   ├── mipmap-hdpi/, mipmap-mdpi/, etc.
-            │   │   ├── ic_launcher.webp
-            │   │   ├── ic_launcher_round.webp
-            │   │   ├── ic_launcher_red.webp          (Example alternate icon)
-            │   │   └── ic_launcher_red_round.webp    (Example alternate icon)
-            │   ├── raw/
-            │   │   └── background_sound.mp3
-            │   └── values/
-            │       ├── colors.xml
-            │       ├── strings.xml
-            │       └── themes.xml
-            └── AndroidManifest.xml
-```
+-   **Transparent Overlay:** Runs as a seamless layer on top of the device's launcher.
+-   **Hidden Settings Panel:** Access a rich settings menu via a secret long-press gesture.
+-   **Full User Customization:** No developer intervention needed. Users can:
+    -   Add multiple text elements.
+    -   Import custom fonts, images (PNG), and animated GIFs from their device.
+    -   Precisely control the **position, scale (size), and rotation** of each text and image element.
+    -   Import custom background audio with controls for start delay and looping.
+    -   Enable a fun "cracked screen" prank effect with a configurable timer.
+    -   Adjust vibration intensity.
+-   **Integrated Asset Browser:** Automatically detects and displays developer-packaged assets alongside user-imported files in a unified gallery.
+-   **Dynamic App Appearance:** Change the app's home screen icon and name from a predefined list of "skins".
+-   **Build Flavors:** Architected with Gradle Product Flavors to easily build separate versions (e.g., for different app stores) with distinct, locked-in settings languages.
+-   **Tamper Detection:** Includes a security check to verify the app's signature and prevent unauthorized modification.
 
 ---
 
@@ -75,119 +29,44 @@ LookAtMe/
 
 1.  Clone this repository to your local machine.
 2.  Open the project in Android Studio.
-3.  Android Studio will prompt you to sync the project. Click **Sync Now**. This will automatically download the required `Glide` library as defined in `app/build.gradle.kts`.
-4.  Customize the app using the guide below.
+3.  Click **Sync Now** when prompted. Gradle will automatically download the required dependencies (like Glide).
+4.  Select your desired build variant (e.g., `englishDebug` or `persianDebug`) in the **Build Variants** tool window.
 5.  Build and run the app on an emulator or a physical device.
 
 ---
 
-## ⚙️ How to Customize (Developer's Guide)
+## ⚙️ App Customization (User Guide)
 
-All customizations are done by either replacing files or changing values in `MainActivity.kt` and `activity_main.xml`.
+All customization is done through a hidden settings panel within the app itself.
 
-### 1. Replacing Content Files
+-   **To Access Settings:** Press and hold your finger in the **top-right corner** of the screen for **5 seconds**.
 
-To change the visual and audio assets, simply replace the following files with your own, keeping the filenames the same.
-
-| Content Type        | File Location                | Instructions                                 |
-| ------------------- | ---------------------------- | -------------------------------------------- |
-| **Custom Font** | `app/src/main/res/font/`     | Replace `my_custom_font.ttf` with your font file.   |
-| **Background Sound**| `app/src/main/res/raw/`      | Replace `background_sound.mp3` with your audio file.|
-| **Animated Image** | `app/src/main/res/drawable/` | Replace `animated_image.gif` with your GIF.        |
-| **Static Image** | `app/src/main/res/drawable/` | Replace `your_png_image.png` with your PNG.      |
-
-### 2. Changing Displayed Text
-
-To change the text that appears on the screen, open the `app/src/main/res/layout/activity_main.xml` file and edit the `android:text` attribute for the desired element.
-
-```xml
-<TextView
-    android:id="@+id/title_text"
-    ...
-    android:text="Your New Title Here" />
-
-<TextView
-    android:id="@+id/footer_text"
-    ...
-    android:text="Your new footer text." />
-
-<TextView
-    android:id="@+id/scrolling_text"
-    ...
-    android:text="Your new long scrolling message..." />
-```
-
-### 3. Configuring Features in `MainActivity.kt`
-
-Open `app/src/main/java/com/example/lookatme/MainActivity.kt`. At the top of the file, inside the `companion object`, you will find all the settings to control the app's behavior.
-
-#### Feature Toggles
-Set these to `true` to enable a feature or `false` to disable it completely.
-
-```kotlin
-private const val IS_TITLE_ENABLED = true
-private const val IS_IMAGE_ENABLED = true
-private const val IS_FOOTER_ENABLED = true
-private const val IS_SCROLLING_TEXT_ENABLED = true
-private const val IS_SOUND_ENABLED = true
-private const val IS_VIBRATION_ENABLED = true
-```
-
-#### Image Type
-Choose whether to display the animated GIF or the static PNG.
-
-```kotlin
-// true: displays animated_image.gif
-// false: displays your_png_image.png
-private const val USE_ANIMATED_IMAGE = true
-```
-
-#### Unlock Mechanism
-Change the number of seconds the user must press and hold to unlock.
-
-```kotlin
-private const val UNLOCK_DELAY_SECONDS = 9
-```
-
-#### Background Sound
-Control the sound's delay and looping behavior.
-
-```kotlin
-// Delay in seconds before the sound starts playing
-private const val SOUND_DELAY_SECONDS = 2
-
-// true: the sound will loop forever
-// false: the sound will play only once
-private const val SOUND_SHOULD_LOOP = true
-```
+From there, you can explore the different menus to import your own fonts, images, and sounds, and control every aspect of your screen's appearance.
 
 ---
 
-## ⚙️ Finalizing Your App for Release
+## 🔧 Developer Configuration Guide
 
-Before publishing your app, you need to configure some essential details like the app icon, package name, and versioning.
+This guide covers the final steps for a developer to prepare the app for release.
 
-### 1. App Icon 🖼️
+### 1. Customizing Pre-packaged Assets
 
-The app icon is the image that users will see on their home screen. The easiest and recommended way to set this is by using Android Studio's built-in "Asset Studio".
+You can pre-package the app with default assets. The internal asset browser will automatically detect them.
 
-1.  In the Android Studio project panel (on the left), right-click on the `app` folder.
-2.  Navigate to **New** > **Image Asset**.
-3.  The **Asset Studio** window will open.
-    - In the **Source Asset** section, under **Path**, choose the path to your own source image file (preferably a 1024x1024 pixel PNG).
-    - You can use the options in the **Options** section to resize and adjust the background color.
-4.  Click **Next**, and then **Finish**.
+| Content Type       | File Location                | Instructions                                 |
+| ------------------ | ---------------------------- | -------------------------------------------- |
+| **Default Font** | `app/src/main/res/font/`     | Place your default `.ttf` font file here.    |
+| **Default Sound** | `app/src/main/res/raw/`      | Place a default `.mp3` or `.ogg` audio file. |
+| **Crack Images** | `app/src/main/res/drawable/` | Place `crack_1.png`, `crack_2.png`, etc. here. |
+| **App Icon Skins** | `app/src/main/res/mipmap-*`  | Place alternate icon sets (e.g., `ic_launcher_red.webp`). |
 
-Android Studio will automatically generate icons in all the required sizes and place them in the correct `res/mipmap` folders.
+### 2. Finalizing App Identity
 
-### 2. Package Name 📦
+Before publishing, you must finalize the app's unique identifiers in `app/build.gradle.kts` and the security key in `SecurityCheck.kt`.
 
-The package name (or Application ID) is your app's **unique identifier** on the Google Play Store and on Android devices. **This cannot be changed after you publish your app.**
+#### **Package Name & Version**
 
-You can set this ID in your app-level `build.gradle.kts` file.
-
-1.  Open the `app/build.gradle.kts` file.
-2.  Inside the `defaultConfig` block, modify the `applicationId` property. The standard convention is to use a reverse domain name format.
+In `app/build.gradle.kts`, set your final `applicationId`, `versionCode`, and `versionName`.
 
 ```kotlin
 // In app/build.gradle.kts
@@ -195,62 +74,51 @@ android {
     // ...
     defaultConfig {
         // ⚠️ IMPORTANT: Change this to your unique ID before publishing!
-        // It should be unique on the Google Play Store.
         applicationId = "com.yourcompany.lookatme"
         
-        minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 1       // Increment this for every new release
+        versionName = "1.0"   // User-facing version string
     }
     // ...
 }
 ```
 
----
+#### **Security Signature Hash**
 
-## 📦 Generating an APK File
+The app will not run if it's been tampered with. You must insert your own release signature hash.
 
-After you have customized the app, you will need to generate an APK file to install it on a device or to publish it on the Google Play Store. There are two types of APKs you can generate.
+1.  Generate a signed release APK using your private keystore (`Build > Generate Signed Bundle / APK...`).
+2.  Install this signed APK on a device.
+3.  Temporarily uncomment the `Log.d(...)` line in `SecurityCheck.kt` and run the app while connected to Android Studio.
+4.  Copy the signature hash printed in the **Logcat** window.
+5.  Paste the real hash into the `OFFICIAL_SIGNATURE_HASH` constant in `SecurityCheck.kt`.
+6.  Re-comment the `Log.d` line and re-enable the security check.
 
-### Method 1: Generating a Debug APK (For Testing) 🧪
+```kotlin
+// In SecurityCheck.kt
+object SecurityCheck {
+    // ⚠️ Replace with your actual signature hash and package name
+    private const val OFFICIAL_SIGNATURE_HASH = "YOUR_REAL_SIGNATURE_HASH_FROM_LOGCAT"
+    private const val OFFICIAL_PACKAGE_NAME = "com.yourcompany.lookatme"
+    // ...
+}
+```
 
-This is the quickest way to create an APK for testing purposes or for sharing with friends. This APK is signed with a temporary debug key and **cannot** be published on the Google Play Store.
+### 3. Generating the Final APK
 
-1.  In the Android Studio top menu, go to **Build**.
-2.  Select **Build Bundle(s) / APK(s)**.
-3.  Click on **Build APK(s)**.
-4.  Android Studio will start building the project. Once it's finished, a notification will appear in the bottom-right corner.
-5.  Click the **locate** link in the notification to find your APK file. It is usually located at `app/build/outputs/apk/debug/app-debug.apk`.
+-   Select the desired **Build Variant** in Android Studio (e.g., `persianRelease` or `englishRelease`).
+-   Go to **Build > Generate Signed Bundle / APK...**.
+-   Select **APK**, choose your release keystore, enter your passwords, and click **Finish**.
 
-### Method 2: Generating a Signed/Release APK (For Google Play) 🚀
-
-This is the official version of your app that you will upload to the Google Play Store. It must be digitally signed with your own private key.
-
-1.  In the Android Studio top menu, go to **Build**.
-2.  Select **Generate Signed Bundle / APK...**.
-3.  In the new window, select **APK** and click **Next**.
-4.  You will now see the **Keystore** screen. This is the most important step.
-    -   **If you don't have a keystore:** Click on **Create new...**.
-        -   **Key store path:** Choose a location on your computer to save your keystore file (e.g., a file named `my-app-key.jks`).
-        -   **⚠️ IMPORTANT:** Back up this file securely! If you lose this key, you will **never** be able to update your app on the Google Play Store again.
-        -   Fill in the passwords for your keystore and your key alias. Keep these passwords safe.
-        -   Fill in the certificate information.
-        -   Click **OK**.
-    -   **If you already have a keystore:** Choose **Choose existing...** and select your keystore file.
-5.  Enter your keystore and key alias passwords and click **Next**.
-6.  Select the **Build Variant** as **release**.
-7.  Click **Finish**.
-
-Once the build is complete, a notification will appear. Click the **locate** link to find your signed APK file, usually located at `app/release/app-release.apk`. This is the file you will upload to Google Play.
+The final, secure, and publish-ready APK will be located in the `app/build/outputs/apk/[flavor]/release/` directory.
 
 ---
 
-## 🤝 Supporting the Developer
+## 🤝 Support
 
-If you like this project and find it useful, please consider showing your support. A small gesture, like buying a coffee, goes a long way in motivating further development and open-source contributions!
+If you like this project, please consider showing your support. It helps motivate further development and open-source contributions!
 
-[☕ Buy Me a Coffee](https://www.buymeacoffee.com/your_username) *(Replace with your actual link)*
+[☕ Buy Me a Coffee](https://www.buymeacoffee.com/your_username) *(Replace with your link)*
 
 ---
 
