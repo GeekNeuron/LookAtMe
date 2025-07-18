@@ -1,4 +1,4 @@
-package com.yourcompany.lookatme
+package com.geekneuron.lookatme
 
 import android.content.ComponentName
 import android.content.Context
@@ -9,8 +9,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.yourcompany.lookatme.databinding.ActivityIconSettingsBinding
-import com.yourcompany.lookatme.databinding.ItemIconChoiceBinding
+import com.geekneuron.lookatme.databinding.ActivityIconSettingsBinding
+import com.geekneuron.lookatme.databinding.ItemIconChoiceBinding
 
 // Data class to hold info for each app skin
 data class AppSkin(val name: String, val iconResId: Int, val aliasClassName: String)
