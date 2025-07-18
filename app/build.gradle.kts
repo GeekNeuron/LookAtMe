@@ -16,12 +16,12 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    // ✅ بخش جدید برای تعریف طعم‌ها
+    // section for defining product flavors
     flavorDimensions += "version"
     productFlavors {
         create("persian") {
             dimension = "version"
-            applicationIdSuffix = ".fa" // پسوند پکیج‌نیم برای نسخه فارسی
+            applicationIdSuffix = ".fa" // Optional suffix for the package name
         }
         create("english") {
             dimension = "version"
@@ -54,7 +54,5 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.12.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-
-    // Glide for loading images and animated GIFs
     implementation("com.github.bumptech.glide:glide:4.16.0")
 }
