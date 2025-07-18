@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.yourcompany.lookatme"
+    namespace = "com.geekneuron.lookatme"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.yourcompany.lookatme"
+        applicationId = "com.geekneuron.lookatme"
         minSdk = 26
         targetSdk = 34
         versionCode = 1
