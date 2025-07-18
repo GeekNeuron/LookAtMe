@@ -1,4 +1,4 @@
-package com.yourcompany.lookatme
+package com.geekneuron.lookatme
 
 import android.content.Context
 import android.content.Intent
@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
 import androidx.fragment.app.DialogFragment
-import com.yourcompany.lookatme.databinding.FragmentSettingsBinding
+import com.geekneuron.lookatme.databinding.FragmentSettingsBinding
 import java.util.Locale
 
 class SettingsDialogFragment : DialogFragment() {
