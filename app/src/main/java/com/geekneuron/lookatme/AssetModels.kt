@@ -1,4 +1,4 @@
-package com.yourcompany.lookatme
+package com.geekneuron.lookatme
 
 /**
  * A sealed class to represent both types of assets in a unified way.
