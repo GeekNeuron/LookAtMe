@@ -1,11 +1,11 @@
-package com.yourcompany.lookatme
+package com.geekneuron.lookatme
 
 import android.content.Context
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.yourcompany.lookatme.databinding.ActivityFontSettingsBinding // فرض کنید لایه شما یک RecyclerView و یک Button دارد
+import com.geekneuron.lookatme.databinding.ActivityFontSettingsBinding // فرض کنید لایه شما یک RecyclerView و یک Button دارد
 import java.io.File
 
 class FontSettingsActivity : BaseSettingsActivity() {
