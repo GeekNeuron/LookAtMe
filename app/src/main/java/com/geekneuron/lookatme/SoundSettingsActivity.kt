@@ -1,4 +1,4 @@
-package com.yourcompany.lookatme
+package com.geekneuron.lookatme
 
 import android.content.Context
 import android.content.Intent
@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import com.yourcompany.lookatme.databinding.ActivitySoundSettingsBinding
+import com.geekneuron.lookatme.databinding.ActivitySoundSettingsBinding
 
 class SoundSettingsActivity : BaseSettingsActivity() {
 
