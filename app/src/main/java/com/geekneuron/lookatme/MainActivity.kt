@@ -16,6 +16,9 @@ import android.view.MotionEvent
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import com.bumptech.glide.Glide
 import com.yourcompany.lookatme.databinding.ActivityMainBinding
 import java.io.File
@@ -44,21 +47,27 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        hideSystemUI()
         vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
         setupLongPressUnlock()
     }
 
     override fun onResume() {
         super.onResume()
-        // Load settings every time the activity is shown
         loadAndApplyUserSettings()
     }
 
     override fun onPause() {
         super.onPause()
-        // Release resources when activity is not visible
         mediaPlayer?.release()
         mediaPlayer = null
+    }
+
+    private fun hideSystemUI() {
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+        val controller = WindowInsetsControllerCompat(window, window.decorView)
+        controller.hide(WindowInsetsCompat.Type.systemBars())
+        controller.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
     }
 
     private val unlockRunnable = Runnable { unlockScreen() }
@@ -68,13 +77,13 @@ class MainActivity : AppCompatActivity() {
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     val screenWidth = resources.displayMetrics.widthPixels
-                    val settingsAreaWidth = screenWidth * 0.2 // 20% right side
-                    val settingsAreaHeight = 200 // Top 200 pixels
+                    val settingsAreaWidth = screenWidth * 0.2
+                    val settingsAreaHeight = 200
 
                     if (event.x > screenWidth - settingsAreaWidth && event.y < settingsAreaHeight) {
-                        settingsHandler.postDelayed({ showSettingsDialog() }, 5000L) // 5 seconds
+                        settingsHandler.postDelayed({ showSettingsDialog() }, 5000L)
                     } else {
-                        unlockHandler.postDelayed(unlockRunnable, UNLOCK_DELAY_SECONDS * 1000L) // 9 seconds
+                        unlockHandler.postDelayed(unlockRunnable, UNLOCK_DELAY_SECONDS * 1000L)
                     }
                     triggerVibration(50)
                 }
@@ -88,23 +97,21 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadAndApplyUserSettings() {
-        // --- Text Settings ---
+        // Text Settings
         if (prefs.getBoolean("IS_TEXT_ENABLED", false)) {
             binding.titleText.visibility = View.VISIBLE
             binding.titleText.text = prefs.getString("CUSTOM_TEXT", "Title")
             binding.titleText.textSize = prefs.getInt("CUSTOM_TEXT_SIZE", 34).toFloat()
-
             val textScale = prefs.getFloat("TEXT_SCALE", 1.0f)
             binding.titleText.scaleX = textScale
             binding.titleText.scaleY = textScale
             binding.titleText.rotation = prefs.getFloat("TEXT_ROTATION", 0f)
-
             loadAndApplyFont()
         } else {
             binding.titleText.visibility = View.GONE
         }
 
-        // --- Image Settings ---
+        // Image Settings
         if (prefs.getBoolean("IS_IMAGE_ENABLED", false)) {
             binding.centerImage.visibility = View.VISIBLE
             val imageIdentifier = prefs.getString("ACTIVE_IMAGE_IDENTIFIER", null)
@@ -117,7 +124,7 @@ class MainActivity : AppCompatActivity() {
             }
             Glide.with(this).load(loadImage).into(binding.centerImage)
 
-            binding.root.post { // Use post to calculate position after layout is complete
+            binding.root.post {
                 val parentWidth = binding.root.width
                 val parentHeight = binding.root.height
                 binding.centerImage.translationX = (parentWidth - binding.centerImage.width) * (prefs.getInt("IMAGE_POSITION_X_PERCENT", 50) / 100f)
@@ -132,7 +139,7 @@ class MainActivity : AppCompatActivity() {
             binding.centerImage.visibility = View.GONE
         }
 
-        // --- Sound Settings ---
+        // Sound Settings
         if (prefs.getBoolean("IS_SOUND_ENABLED", false)) {
             setupAndPlaySoundFromPrefs()
         }
@@ -154,7 +161,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             } catch (e: Exception) {
-                e.printStackTrace() // Log error if font loading fails
+                e.printStackTrace()
             }
         }
         binding.titleText.typeface = customTypeface ?: Typeface.DEFAULT
@@ -165,9 +172,14 @@ class MainActivity : AppCompatActivity() {
             triggerVibration(200)
             binding.lockView.animate().alpha(0f).setDuration(500).withEndAction {
                 binding.lockView.visibility = View.GONE
+                enableScreenPinning()
                 triggerCrackEffectIfNeeded()
             }.start()
         }
+    }
+
+    private fun enableScreenPinning() {
+        startLockTask()
     }
 
     private fun triggerCrackEffectIfNeeded() {
