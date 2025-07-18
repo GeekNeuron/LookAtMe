@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LookAtMe</string>
+    <string name="app_name_red">LookAtMe (Red)</string>
+    <string name="settings_title">Settings</string>
+    <string name="enable_text_and_font">Enable Text &amp; Font</string>
+    </resources>
