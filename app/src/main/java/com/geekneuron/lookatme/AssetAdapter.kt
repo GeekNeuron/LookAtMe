@@ -1,4 +1,4 @@
-package com.yourcompany.lookatme
+package com.geekneuron.lookatme
 
 import android.graphics.Typeface
 import android.media.MediaPlayer
@@ -10,9 +10,9 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.yourcompany.lookatme.databinding.ItemFontChoiceBinding
-import com.yourcompany.lookatme.databinding.ItemImageChoiceBinding
-import com.yourcompany.lookatme.databinding.ItemSoundChoiceBinding
+import com.geekneuron.lookatme.databinding.ItemFontChoiceBinding
+import com.geekneuron.lookatme.databinding.ItemImageChoiceBinding
+import com.geekneuron.lookatme.databinding.ItemSoundChoiceBinding
 import java.io.File
 
 class AssetAdapter(
