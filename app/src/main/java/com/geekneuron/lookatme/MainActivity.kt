@@ -1,4 +1,4 @@
-package com.yourcompany.lookatme
+package com.geekneuron.lookatme
 
 import android.content.Context
 import android.content.Intent
@@ -20,7 +20,7 @@ import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import com.bumptech.glide.Glide
-import com.yourcompany.lookatme.databinding.ActivityMainBinding
+import com.geekneuron.lookatme.databinding.ActivityMainBinding
 import java.io.File
 import java.io.FileOutputStream
 
